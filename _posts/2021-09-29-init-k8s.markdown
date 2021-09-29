@@ -1,0 +1,76 @@
+---
+layout: post
+title:  "安装 Kubernetes"
+date:   2021-09-29 19:15:00 +0800
+categories: jekyll update
+---
+
+### 前言
+今天安装 `Kubernetes` 遇到了一些新问题，故作记录。
+
+安装环境为 `Debian 10`，使用 `Docker` 作为 `Container Runtime`。
+
+### 安装过程
+完整的安装脚本在 GitHub Gist: [init_k8s.sh](https://gist.github.com/i3h/2abf0e4c7d571df7d2649e8b4e15234f)
+
+1\. 加载 `br_netfilter` 模块，设置 `sysctl` 使 `iptables` 可以看到桥接流量。
+
+```sh
+# Letting iptables see bridged traffic
+cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
+br_netfilter
+EOF
+>>
+
+cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+EOF
+sudo sysctl --system
+>>
+```
+
+2\. 安装 Docker
+
+```sh
+# Installing runtime
+sudo apt-get update
+sudo apt-get install -y \
+        apt-transport-https \
+        ca-certificates \
+        curl \
+        gnupg \
+        lsb-release
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo \
+        "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+        $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+```
+
+3\. 安装 `kubeadm`、`kubelet`、`kubectl`
+
+`apt-mark` 的作用是防止程序被自动安装、升级或删除。
+[文档链接](http://manpages.ubuntu.com/manpages/trusty/man8/apt-mark.8.html)
+
+```sh
+# Installing kubeadm, kubelet and kubectl
+sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+sudo apt-get update
+sudo apt-get install -y kubelet kubeadm kubectl
+sudo apt-mark hold kubelet kubeadm kubectl
+```
+
+4\. 设置 kubectl autocompletion
+```sh
+echo 'source <(kubectl completion bash)' >>~/.bashrc
+kubectl completion bash >/etc/bash_completion.d/kubectl
+```
+
+5\. 设置 kubectl alias
+```sh
+echo 'alias k=kubectl' >>~/.bashrc
+echo 'complete -F __start_kubectl k' >>~/.bashrc
+```
