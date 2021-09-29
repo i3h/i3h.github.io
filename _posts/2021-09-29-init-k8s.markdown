@@ -7,7 +7,7 @@ date:   2021-09-29
 #### **前言**
 今天安装 `Kubernetes` 遇到了一些[新问题](#遇到的问题)，故作记录。
 
-安装环境为 `Debian 10`，使用 `Docker` 作为 `Container Runtime`。
+系统环境为 `Ubuntu 20.04`，使用 `Docker` 作为 `Container Runtime`。
 
 #### **安装过程**
 完整的安装脚本在 GitHub Gist: [init_k8s.sh](https://gist.github.com/i3h/2abf0e4c7d571df7d2649e8b4e15234f)
@@ -75,10 +75,12 @@ echo 'complete -F __start_kubectl k' >>~/.bashrc
 ```
 
 #### **遇到的问题**
-2\. container runtime 和 kubelet 的 `cgroup driver` 必须保持一致
+container runtime 和 kubelet 的 `cgroup driver` 必须保持一致。
 
 kubelet 的 cgroup driver 默认是 `systemd`，而 docker 默认是 `cgroupfs`，这导致 kubelet 一直无法启动。
 
 修改 `/lib/systemd/system/docker.service`
 
 在 `ExecStart` 后面增加选项 `--exec-opt native.cgroupdriver=systemd`
+
+最后执行 `kubeadm init` 就可以完成 Kubernetes 的初始化。
