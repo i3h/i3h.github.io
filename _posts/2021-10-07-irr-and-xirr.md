@@ -8,9 +8,10 @@ date: 2021-10-07 17:46
 
 对于一笔固定的投资计算收益率很简单：
 
-$$ r = \frac{P_{365} - P_{0}}{P_{0}} $$
+$$ C_{n} = C_{0}(1+r)^{n} $$
 
-- P 为现金流（Cash Flow）
+- r 为收益率
+- C 为现金流（Cash Flow）
 
 但是对于多次出入金的情况，则不能使用这种方式计算收益率。于是有了 IRR 和 XIRR 等算法。
 
@@ -28,16 +29,34 @@ $$ \frac{\$1,000}{1.05} = \$952.38 $$
 
 #### **NPV**
 
-Net Present Value 是将未来的现金流折算成当前的现金流，加总起来成为净现值。
+Net Present Value 是将未来的现金流折算成当前的现金流，加起来成为净现值。
+
+$$ NPV(r,N) = \sum^{N}_{t=0}\frac{C_{t}}{(1+r)^t} $$
+
+- r 为折扣率
+- t 为时间
+- $$C_{t}$$ 为现金流
 
 #### **IRR**
 
-Internal Rate of Return
+Internal Rate of Return 是 NPV 为 0 时的折扣率，即
+
+$$ NPV(r,N) = \sum^{N}_{t=0}\frac{C_{t}}{(1+r)^t} = 0 $$
+
+如果上述公式的求和序列只有 $$t=0$$ 和 $$t=n$$ 两项，则退化为一开始提到的只有一笔固定投资的情况。
 
 #### **XIRR**
 
-Extended Internal Rate of Return
+Extended Internal Rate of Return 与 IRR 的区别在于：
+
+IRR 中的时间单位为 **年**
+
+而 XIRR 则可以更细地切割为 **日**，公式中的时间 $$t$$ 写为分数即可。
 
 #### **参考资料**
 
 1. <https://www.ablebits.com/office-addins-blog/2019/07/24/excel-xirr-nonperiodic-cash-flows/>
+
+2. <https://en.wikipedia.org/wiki/Net_present_value>
+
+3. <https://en.wikipedia.org/wiki/Internal_rate_of_return>
