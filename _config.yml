@@ -8,3 +8,8 @@ url: '' # the base hostname & protocol for your site, e.g. http://example.com
 theme: minima
 
 permalink: /:title
+
+markdown: kramdown
+
+kramdown:
+  math_engine: katex
