@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Three blades wind turbines'
+title: '[TBD] Three blades wind turbines'
 date: 2021-10-09 20:06
 ---
 
