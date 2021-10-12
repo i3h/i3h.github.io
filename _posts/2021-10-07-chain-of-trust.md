@@ -18,7 +18,7 @@ CA 的 Root Certificate 内置于操作系统，相当于第一次分发。之�
 
 CA 会签发多个 Intermediate Certificate 用于为用户签发 End Entity Certificate。如果中间证书的私钥泄露，CA 可以吊销相关证书，影响范围会小很多。
 
-![chain_of_trust](/assets/chain-of-trust/Chain_Of_Trust.svg)
+![chain_of_trust](/assets/Chain_Of_Trust.svg)
 
 #### **参考资料**
 

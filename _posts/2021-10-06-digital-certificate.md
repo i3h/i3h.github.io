@@ -22,7 +22,7 @@ date: 2021-10-06
 
 CA 用自己的私钥对上述信息进行签名，即得到了 Certificate。
 
-![PublicKeyCertificateDiagram_It.svg](/assets/digital-certificate/PublicKeyCertificateDiagram_It.svg)
+![PublicKeyCertificateDiagram_It.svg](/assets/PublicKeyCertificateDiagram_It.svg)
 
 #### **验证过程**
 

@@ -25,7 +25,7 @@ $$ C_{n} = C_{0}(1+r)^{n} $$
 
 $$ \frac{\$1,000}{1.05} = \$952.38 $$
 
-![Economics_of_climate_change_chapter3_discounting_curves.png](/assets/irr-and-xirr/Economics_of_climate_change_chapter3_discounting_curves.png)
+![Economics_of_climate_change_chapter3_discounting_curves.png](/assets/Economics_of_climate_change_chapter3_discounting_curves.png)
 
 #### **NPV**
 

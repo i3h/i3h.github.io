@@ -16,15 +16,15 @@ date: 2021-10-05
 
 1. 文本通过 Hash 输出摘要(Message Digest)
 
-   ![generate_hash](/assets/digital-signature/generate_hash.png)
+   ![generate_hash](/assets/generate_hash.png)
 
 2. 摘要通过私钥加密输出签名(Signature)
 
-   ![generate_signature](/assets/digital-signature/generate_signature.png)
+   ![generate_signature](/assets/generate_signature.png)
 
 3. 签名附加到文本之后
 
-   ![append_signature](/assets/digital-signature/append_signature.png)
+   ![append_signature](/assets/append_signature.png)
 
 4. 收信人对比两个摘要
 
@@ -34,7 +34,7 @@ date: 2021-10-05
 
    这两个结果应该是一致的，否则说明文本被篡改。
 
-   ![compare_hash](/assets/digital-signature/compare_hash.png)
+   ![compare_hash](/assets/compare_hash.png)
 
 #### **参考资料**
 
