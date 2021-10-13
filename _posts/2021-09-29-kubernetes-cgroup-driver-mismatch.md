@@ -39,3 +39,7 @@ kubelet 的 cgroup driver 默认是 `systemd`，而 docker 默认是 `cgroupfs`�
 2. <https://kubernetes.io/docs/tasks/tools/included/optional-kubectl-configs-bash-linux/>
 
 3. <https://docs.cilium.io/en/v1.9/gettingstarted/k8s-install-default/>
+
+4. <https://sysdig.com/blog/kubernetes-monitoring-prometheus/>
+
+5. <https://github.com/prometheus-operator/kube-prometheus/blob/main/docs/kube-prometheus-on-kubeadm.md>
