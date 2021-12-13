@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Inspect K8S Pods"
-date: 2021-12-11
+date: 2021-12-13
 ---
 
 #### **SSH K8S Pods 命令**
