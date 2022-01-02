@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Digital Certificate'
+title: "电子证书"
 date: 2021-10-06
 ---
 

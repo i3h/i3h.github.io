@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Lumen and Color Temperature'
+title: "流明和色温"
 date: 2021-10-15
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Certificate Revocation'
+title: "证书撤销"
 date: 2021-10-07 13:09
 ---
 

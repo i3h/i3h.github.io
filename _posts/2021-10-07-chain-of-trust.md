@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Chain of Trust'
+title: "信任链"
 date: 2021-10-07
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "K8S Service Types"
+title: "K8s Service 类型"
 date: 2021-12-17
 ---
 

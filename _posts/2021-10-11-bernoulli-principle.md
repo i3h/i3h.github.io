@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Bernoulli's principle"
+title: "伯努利方程"
 date: 2021-10-11 21:53
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Inspect K8S Pods"
+title: "检查 K8s Pod"
 date: 2021-12-13
 ---
 

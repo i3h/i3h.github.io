@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Grafana Data Persistence"
+title: "Grafana 数据持久化"
 date: 2021-12-16
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Setup Prometheus"
-date: 2021-12-14
+title: "安装 Prometheus"
+date: 2021-12-15
 ---
 
 #### **Quickstart**
